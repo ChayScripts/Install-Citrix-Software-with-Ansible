@@ -28,7 +28,7 @@ ansible-playbook playbook.yml -i hosts.txt -e@vars.yml --extra-vars "ansible_use
 ```
 ### Notes
 
-* For director to work, it should be pointed to an existing Citrix site. So, if you install director software alone and try to login, it errors out. 
+* For director to work, it should be pointed to an existing Citrix site. So, if you install director software alone and try to login, it errors out. Use [Add Other DDC to Director](http://knowcitrix.com/add-other-ddc-to-citrix-director/) link and add Citrix DDC to your Director.
 * Commands used in this repo are tested on CVAD 1912 LTSR version. In future, installation commands may change.
 
 ### Built With
