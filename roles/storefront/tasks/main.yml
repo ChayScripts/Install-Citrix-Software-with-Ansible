@@ -1,0 +1,33 @@
+---
+- name: Create Log Folder
+  win_file:
+    path: C:\Logs
+    state: directory
+
+- name: Install Storefront Components
+  block:
+    - win_package:
+        path: "{{ citrix_path }}\\x64\\Storefront\\CitrixStoreFront-x64.exe"
+        arguments: '-silent'
+        state: present
+        expected_return_code: [0, 3, 4, 3010]
+        creates_path: C:\ProgramData\Citrix\Storefront Install
+      register: sf_install
+  rescue:
+    - debug:
+          msg: 'Going to reboot and try again'
+    - win_reboot:
+    - win_package:
+        path: "{{ citrix_path }}\\x64\\Storefront\\CitrixStoreFront-x64.exe"
+        arguments: '-silent'
+        state: present
+        expected_return_code: [0, 3, 4, 3010]
+        creates_path: C:\ProgramData\Citrix\Storefront Install
+      register: sf_install
+
+- name: Reboot after Storefront
+  win_reboot:
+  when: sf_install.changed
+
+
+

@@ -1,0 +1,13 @@
+---
+- hosts: AnsibleCtxDDC1,AnsibleCtxDDC2
+  roles:
+   - ddc
+   - director
+
+- hosts: AnsibleCtxSF1,AnsibleCtxSF2
+  roles:
+   - storefront
+
+- hosts: AnsibleCtxLic
+  roles:
+   - license

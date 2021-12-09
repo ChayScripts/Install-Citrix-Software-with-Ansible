@@ -1,0 +1,11 @@
+---
+- name: Install License Server
+  win_package:
+    path: "{{ citrix_path }}\\x64\\XenDesktop Setup\\XenDesktopServerSetup.exe"
+    arguments: /components licenseserver /configure_firewall /disableexperiencemetrics /noreboot /quiet /logpath C:\Logs
+    state: present
+  register: lic_install
+
+- name: Reboot after License Server
+  win_reboot:
+  when: lic_install.changed

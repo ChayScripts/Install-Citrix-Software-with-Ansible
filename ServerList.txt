@@ -1,0 +1,12 @@
+[ctx]
+AnsibleCtxDDC1 ansible_host=DDC1_IP_Address
+AnsibleCtxDDC2 ansible_host=DDC2_IP_Address
+AnsibleCtxSF1 ansible_host=SF1_IP_Address
+AnsibleCtxSF2 ansible_host=SF2_IP_Address
+AnsibleCtxLic ansible_host=LicenseSrv_IP_Address
+
+[ctx:vars]
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=ntlm
+ansible_winrm_port=5985

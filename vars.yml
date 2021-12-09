@@ -1,0 +1,6 @@
+#citrix software source folder. Extract ISO files to this location.
+citrix_path: \\SharePath\cvad
+
+#Citrix director URL
+DirectorUrl: http:\\localhost
+
