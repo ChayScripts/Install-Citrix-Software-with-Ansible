@@ -41,10 +41,6 @@ ansible-playbook playbook.yml -i hosts.txt -e@vars.yml --extra-vars "ansible_use
 * **Chay** - [ChayScripts](https://github.com/ChayScripts)
 * Core Ansible script format is from: [Ryan's GitHub repo](https://github.com/ryancbutler/Citrix-VAD-LAB/tree/master/ansible)
 
-### Contributing
-
-Please follow [github flow](https://guides.github.com/introduction/flow/index.html) for contributing.
-
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
